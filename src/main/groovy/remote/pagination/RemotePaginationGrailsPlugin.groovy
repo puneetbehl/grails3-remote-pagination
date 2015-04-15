@@ -1,7 +1,9 @@
 package remote.pagination
 
 import grails.plugins.*
+import groovy.util.logging.Commons
 
+@Commons
 class RemotePaginationGrailsPlugin extends Plugin {
 
     // the version or versions of Grails the plugin is designed for
@@ -13,10 +15,10 @@ class RemotePaginationGrailsPlugin extends Plugin {
 
     // TODO Fill in these fields
     def title = "Remote Pagination" // Headline display name of the plugin
-    def author = "Your name"
-    def authorEmail = ""
+    def author = "Puneet Behl"
+    def authorEmail = "puneet.behl007@gmail.com"
     def description = '''\
-Brief summary/description of the plugin.
+Remote-Pagination plugin provides tags for pagination and to sort columns without page refresh, using ajax and loads only the list of objects needed. It supports multiple paginations as well. More than one remotePaginate, remotePageScroll, remoteNonStopPageScroll and remoteSortableColumn can be used on the same page unlike non-ajax pagination tags.
 '''
     def profiles = ['web']
 
@@ -26,19 +28,21 @@ Brief summary/description of the plugin.
     // Extra (optional) plugin metadata
 
     // License: one of 'APACHE', 'GPL2', 'GPL3'
-//    def license = "APACHE"
+   def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
-//    def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
+   def organization = [ name: "Intelligrape Softwares", url: "http://www.intelligrape.com/" ]
 
     // Any additional developers beyond the author specified above.
-//    def developers = [ [ name: "Joe Bloggs", email: "joe@bloggs.net" ]]
+   def developers = [ [ name: "Puneet Behl", email: "puneet.behl@intelligrape.com" ],
+                      [ name: "Amit Jain", email: "amitjain1982@gmail.com"]
+    ]
 
     // Location of the plugin's issue tracker.
-//    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPMYPLUGIN" ]
+   def issueManagement = [ system: "github", url: "https://github.com/puneetbehl/remote-pagination/issues" ]
 
     // Online location of the plugin's browseable source code.
-//    def scm = [ url: "http://svn.codehaus.org/grails-plugins/" ]
+   def scm = [ url: "https://github.com/puneetbehl/remote-pagination.git" ]
 
     Closure doWithSpring() { {->
             // TODO Implement runtime spring config (optional)
