@@ -44,8 +44,16 @@ Remote-Pagination plugin provides tags for pagination and to sort columns withou
     // Online location of the plugin's browseable source code.
    def scm = [ url: "https://github.com/puneetbehl/remote-pagination.git" ]
 
+   ConfigObject rpaginationConfig
+
     Closure doWithSpring() { {->
-            // TODO Implement runtime spring config (optional)
+            rpaginationConfig = grailsApplication.config.grails.plugins.remotePagination
+            if(!rpaginationConfig.max) {
+                rpaginationConfig.max = 10
+            }
+            if(!rpaginationConfig.enableBootstrap) {
+                rpaginationConfig.enableBootstrap = false
+            }
         } 
     }
 
