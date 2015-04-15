@@ -1,5 +1,6 @@
 package grails.plugins.remotepagination
 
+import grails.core.GrailsApplication
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
 
 /**
@@ -8,7 +9,7 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
  */
 class RemotePaginationTagLib {
     static namespace = "util"
-    def grailsApplication
+    GrailsApplication grailsApplication
 
     def remotePaginate = {attrs ->
         def writer = out
